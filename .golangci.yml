@@ -3,6 +3,8 @@ run:
 
   skip-files:
   - "zz_generated\\..+\\.go$"
+  - "zz_generated_deepcopy\\..+\\.go$"
+  - "parser\\.go$"
 
   skip-dirs:
     - vendor$
