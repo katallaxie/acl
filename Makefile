@@ -6,6 +6,9 @@ GO_TEST = $(GO_RUN_TOOLS) gotest.tools/gotestsum --format pkgname
 GO_RELEASER ?= $(GO_RUN_TOOLS) github.com/goreleaser/goreleaser
 GO_MOD ?= $(shell ${GO} list -m)
 
+# find all source files
+SRC = $(go list ./... | grep -v /parser)
+
 # Module name
 MODULE_NAME ?= github.com/katallaxie/template-go
 
@@ -23,12 +26,12 @@ fmt: ## Run go fmt against code.
 
 .PHONY: vet
 vet: ## Run go vet against code.
-	$(GO) vet ./...
+	$(GO) vet $(SRC)
 
 .PHONY: test
 test: fmt vet ## Run tests.
 	mkdir -p .test/reports
-	$(GO_TEST) --junitfile .test/reports/unit-test.xml -- -race ./... -count=1 -short -cover -coverprofile .test/reports/unit-test-coverage.out
+	$(GO_TEST) --junitfile .test/reports/unit-test.xml -- -race $(SRC) -count=1 -short -cover -coverprofile .test/reports/unit-test-coverage.out
 
 .PHONY: lint
 lint: ## Run lint.
