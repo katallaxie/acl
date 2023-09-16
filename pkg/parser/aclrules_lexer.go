@@ -1,4 +1,4 @@
-// Code generated from firebase.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from AclRules.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parsing
 
@@ -14,14 +14,14 @@ var _ = fmt.Printf
 var _ = sync.Once{}
 var _ = unicode.IsLetter
 
-type FirebaseRulesLexer struct {
+type AclRulesLexer struct {
 	*antlr.BaseLexer
 	channelNames []string
 	modeNames    []string
 	// TODO: EOF string
 }
 
-var FirebaseRulesLexerLexerStaticData struct {
+var AclRulesLexerLexerStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	ChannelNames           []string
@@ -34,8 +34,8 @@ var FirebaseRulesLexerLexerStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func firebaseruleslexerLexerInit() {
-	staticData := &FirebaseRulesLexerLexerStaticData
+func aclruleslexerLexerInit() {
+	staticData := &AclRulesLexerLexerStaticData
 	staticData.ChannelNames = []string{
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 	}
@@ -229,86 +229,86 @@ func firebaseruleslexerLexerInit() {
 	}
 }
 
-// FirebaseRulesLexerInit initializes any static state used to implement FirebaseRulesLexer. By default the
+// AclRulesLexerInit initializes any static state used to implement AclRulesLexer. By default the
 // static state used to implement the lexer is lazily initialized during the first call to
-// NewFirebaseRulesLexer(). You can call this function if you wish to initialize the static state ahead
+// NewAclRulesLexer(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func FirebaseRulesLexerInit() {
-	staticData := &FirebaseRulesLexerLexerStaticData
-	staticData.once.Do(firebaseruleslexerLexerInit)
+func AclRulesLexerInit() {
+	staticData := &AclRulesLexerLexerStaticData
+	staticData.once.Do(aclruleslexerLexerInit)
 }
 
-// NewFirebaseRulesLexer produces a new lexer instance for the optional input antlr.CharStream.
-func NewFirebaseRulesLexer(input antlr.CharStream) *FirebaseRulesLexer {
-	FirebaseRulesLexerInit()
-	l := new(FirebaseRulesLexer)
+// NewAclRulesLexer produces a new lexer instance for the optional input antlr.CharStream.
+func NewAclRulesLexer(input antlr.CharStream) *AclRulesLexer {
+	AclRulesLexerInit()
+	l := new(AclRulesLexer)
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	staticData := &FirebaseRulesLexerLexerStaticData
+	staticData := &AclRulesLexerLexerStaticData
 	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
 	l.channelNames = staticData.ChannelNames
 	l.modeNames = staticData.ModeNames
 	l.RuleNames = staticData.RuleNames
 	l.LiteralNames = staticData.LiteralNames
 	l.SymbolicNames = staticData.SymbolicNames
-	l.GrammarFileName = "firebase.g4"
+	l.GrammarFileName = "AclRules.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
 	return l
 }
 
-// FirebaseRulesLexer tokens.
+// AclRulesLexer tokens.
 const (
-	FirebaseRulesLexerT__0                = 1
-	FirebaseRulesLexerT__1                = 2
-	FirebaseRulesLexerCurlyOpen           = 3
-	FirebaseRulesLexerCurlyClose          = 4
-	FirebaseRulesLexerBracketOpen         = 5
-	FirebaseRulesLexerBracketClose        = 6
-	FirebaseRulesLexerPathVariableBracket = 7
-	FirebaseRulesLexerSquareBracketOpen   = 8
-	FirebaseRulesLexerSquareBracketClose  = 9
-	FirebaseRulesLexerDot                 = 10
-	FirebaseRulesLexerColon               = 11
-	FirebaseRulesLexerComma               = 12
-	FirebaseRulesLexerSemicolon           = 13
-	FirebaseRulesLexerLessThan            = 14
-	FirebaseRulesLexerLessOrEqual         = 15
-	FirebaseRulesLexerGreaterOrEqual      = 16
-	FirebaseRulesLexerGreaterThan         = 17
-	FirebaseRulesLexerEquals              = 18
-	FirebaseRulesLexerUnequal             = 19
-	FirebaseRulesLexerLogicalAnd          = 20
-	FirebaseRulesLexerLogicalOr           = 21
-	FirebaseRulesLexerLogicalNot          = 22
-	FirebaseRulesLexerBinaryAnd           = 23
-	FirebaseRulesLexerBinaryOr            = 24
-	FirebaseRulesLexerArithmeticAdd       = 25
-	FirebaseRulesLexerArithmeticSub       = 26
-	FirebaseRulesLexerArithmeticMul       = 27
-	FirebaseRulesLexerArithmeticExp       = 28
-	FirebaseRulesLexerArithmeticModus     = 29
-	FirebaseRulesLexerInOperator          = 30
-	FirebaseRulesLexerAllow               = 31
-	FirebaseRulesLexerMatch               = 32
-	FirebaseRulesLexerIf                  = 33
-	FirebaseRulesLexerGet                 = 34
-	FirebaseRulesLexerExists              = 35
-	FirebaseRulesLexerTrue                = 36
-	FirebaseRulesLexerFalse               = 37
-	FirebaseRulesLexerList                = 38
-	FirebaseRulesLexerCreate              = 39
-	FirebaseRulesLexerUpdate              = 40
-	FirebaseRulesLexerRead                = 41
-	FirebaseRulesLexerWrite               = 42
-	FirebaseRulesLexerDelete              = 43
-	FirebaseRulesLexerFunction            = 44
-	FirebaseRulesLexerReturn              = 45
-	FirebaseRulesLexerNull                = 46
-	FirebaseRulesLexerService             = 47
-	FirebaseRulesLexerNumber              = 48
-	FirebaseRulesLexerString_             = 49
-	FirebaseRulesLexerIdentifier          = 50
-	FirebaseRulesLexerSlash               = 51
-	FirebaseRulesLexerWS                  = 52
-	FirebaseRulesLexerComment             = 53
+	AclRulesLexerT__0                = 1
+	AclRulesLexerT__1                = 2
+	AclRulesLexerCurlyOpen           = 3
+	AclRulesLexerCurlyClose          = 4
+	AclRulesLexerBracketOpen         = 5
+	AclRulesLexerBracketClose        = 6
+	AclRulesLexerPathVariableBracket = 7
+	AclRulesLexerSquareBracketOpen   = 8
+	AclRulesLexerSquareBracketClose  = 9
+	AclRulesLexerDot                 = 10
+	AclRulesLexerColon               = 11
+	AclRulesLexerComma               = 12
+	AclRulesLexerSemicolon           = 13
+	AclRulesLexerLessThan            = 14
+	AclRulesLexerLessOrEqual         = 15
+	AclRulesLexerGreaterOrEqual      = 16
+	AclRulesLexerGreaterThan         = 17
+	AclRulesLexerEquals              = 18
+	AclRulesLexerUnequal             = 19
+	AclRulesLexerLogicalAnd          = 20
+	AclRulesLexerLogicalOr           = 21
+	AclRulesLexerLogicalNot          = 22
+	AclRulesLexerBinaryAnd           = 23
+	AclRulesLexerBinaryOr            = 24
+	AclRulesLexerArithmeticAdd       = 25
+	AclRulesLexerArithmeticSub       = 26
+	AclRulesLexerArithmeticMul       = 27
+	AclRulesLexerArithmeticExp       = 28
+	AclRulesLexerArithmeticModus     = 29
+	AclRulesLexerInOperator          = 30
+	AclRulesLexerAllow               = 31
+	AclRulesLexerMatch               = 32
+	AclRulesLexerIf                  = 33
+	AclRulesLexerGet                 = 34
+	AclRulesLexerExists              = 35
+	AclRulesLexerTrue                = 36
+	AclRulesLexerFalse               = 37
+	AclRulesLexerList                = 38
+	AclRulesLexerCreate              = 39
+	AclRulesLexerUpdate              = 40
+	AclRulesLexerRead                = 41
+	AclRulesLexerWrite               = 42
+	AclRulesLexerDelete              = 43
+	AclRulesLexerFunction            = 44
+	AclRulesLexerReturn              = 45
+	AclRulesLexerNull                = 46
+	AclRulesLexerService             = 47
+	AclRulesLexerNumber              = 48
+	AclRulesLexerString_             = 49
+	AclRulesLexerIdentifier          = 50
+	AclRulesLexerSlash               = 51
+	AclRulesLexerWS                  = 52
+	AclRulesLexerComment             = 53
 )

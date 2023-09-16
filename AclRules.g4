@@ -1,4 +1,4 @@
-grammar FirebaseRules;
+grammar AclRules;
 /* This will be the entry point of our parser.*/
 service: Service namespaceIdentifier namespaceBlock;
 
