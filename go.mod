@@ -3,6 +3,7 @@ module github.com/katallaxie/template-go
 go 1.20
 
 require (
+	github.com/antlr4-go/antlr/v4 v4.13.0
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.54.2
 	github.com/katallaxie/pkg v0.5.8
@@ -169,7 +170,7 @@ require (
 	go.tmz.dev/musttag v0.7.2 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
 	go.uber.org/zap v1.25.0 // indirect
-	golang.org/x/exp v0.0.0-20230510235704-dd950f8aeaea // indirect
+	golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc // indirect
 	golang.org/x/exp/typeparams v0.0.0-20230307190834-24139beb5833 // indirect
 	golang.org/x/mod v0.12.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect

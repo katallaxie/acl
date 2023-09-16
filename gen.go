@@ -3,4 +3,4 @@
 
 package main
 
-//go:generate echo "Generating..."
+//go:generate ./generate.sh
