@@ -1,6 +1,6 @@
 //go:build generate
 // +build generate
 
-package main
+package acl
 
 //go:generate ./generate.sh
