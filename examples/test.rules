@@ -1,0 +1,7 @@
+service cloud.database {
+  match /databases/{database}/documents {
+    match /organizations/{doc} {
+      allow read: if 2 in [1, 2];
+    }
+  }
+}
