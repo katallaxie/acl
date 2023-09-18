@@ -7,7 +7,7 @@ GO_RELEASER ?= $(GO_RUN_TOOLS) github.com/goreleaser/goreleaser
 GO_MOD ?= $(shell ${GO} list -m)
 
 # find all source files
-SRC = $(go list ./... | grep -v /parser)
+SRC = $(go list ./... | grep -v /parser/)
 
 # Module name
 MODULE_NAME ?= github.com/katallaxie/template-go
@@ -26,7 +26,7 @@ fmt: ## Run go fmt against code.
 
 .PHONY: vet
 vet: ## Run go vet against code.
-	$(GO) vet $(SRC)
+	$(GO) vet ./...
 
 .PHONY: test
 test: fmt vet ## Run tests.
