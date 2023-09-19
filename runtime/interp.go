@@ -8,6 +8,7 @@ import (
 
 type interp struct {
 	parser *parser.AclRulesParser
+	parser.BaseAclRulesListener
 }
 
 // FromString ...
@@ -15,14 +16,15 @@ func FromString(s string) (*interp, error) {
 	input := antlr.NewInputStream(s)
 	lexer := parser.NewAclRulesLexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
 	p := parser.NewAclRulesParser(stream)
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
 	in := new(interp)
 	in.parser = p
 
-	// service := p.Service()
-	// antlr.ParseTreeWalkerDefault.Walk(p, service)
+	service := p.Service()
+	antlr.NewParseTreeWalker().Walk(in, service)
 
 	return in, nil
 }
