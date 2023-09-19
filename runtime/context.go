@@ -1,5 +1,4 @@
 package runtime
 
 // Context ...
-type Context struct {
-}
+type Context struct{}

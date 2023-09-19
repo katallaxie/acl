@@ -9,9 +9,6 @@ GO_MOD ?= $(shell ${GO} list -m)
 # find all source files
 SRC = $(go list ./... | grep -v /parser/)
 
-# Module name
-MODULE_NAME ?= github.com/katallaxie/template-go
-
 .PHONY: build
 build: ## Build the binary file.
 	$(GO_RELEASER) build --snapshot --rm-dist
