@@ -24,7 +24,7 @@ func FromString(s string) (*interp, error) {
 	in.parser = p
 
 	service := p.Service()
-	antlr.NewParseTreeWalker().Walk(in, service)
+	antlr.ParseTreeWalkerDefault.Walk(in, service)
 
 	return in, nil
 }
