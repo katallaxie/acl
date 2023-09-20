@@ -1,6 +1,8 @@
 package runtime
 
 import (
+	"fmt"
+
 	parser "github.com/katallaxie/acl/parser"
 
 	"github.com/antlr4-go/antlr/v4"
@@ -32,6 +34,11 @@ func FromString(s string) (*interp, error) {
 // NewInterp ...
 func NewInterp() *interp {
 	return &interp{}
+}
+
+// EnterService ...
+func (i *interp) EnterService(ctx *parser.ServiceContext) {
+	fmt.Println("EnterService")
 }
 
 // HasAccess ...

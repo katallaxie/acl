@@ -1,19 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
-	"github.com/antlr4-go/antlr/v4"
-	parser "github.com/katallaxie/acl/parser"
+	"github.com/katallaxie/acl/runtime"
 )
 
 func main() {
-	input, _ := antlr.NewFileStream(os.Args[1])
-	lexer := parser.NewAclRulesLexer(input)
-	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
-	p := parser.NewAclRulesParser(stream)
-	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
-	service := p.Service()
-	fmt.Println(service.GetText())
+	rules, err := os.ReadFile(os.Args[1])
+	if err != nil {
+		panic(err)
+	}
+
+	interp, err := runtime.FromString(string(rules))
+	if err != nil {
+		panic(err)
+	}
+
+	interp.HasAccess(runtime.Context{}, "/foo/bar")
 }
