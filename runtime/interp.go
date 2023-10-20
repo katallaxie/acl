@@ -1,7 +1,7 @@
 package runtime
 
 import (
-	"fmt"
+	"log"
 
 	parser "github.com/katallaxie/acl/parser"
 
@@ -39,7 +39,37 @@ func NewInterp() *interp {
 
 // EnterService ...
 func (i *interp) EnterService(ctx *parser.ServiceContext) {
-	fmt.Println("EnterService")
+	log.Print("EnterService")
+}
+
+// EnterMatcher ...
+func (i *interp) EnterMatcher(ctx *parser.MatcherContext) {
+	log.Print("EnterMatcher")
+}
+
+// ExitMatcher ...
+func (i *interp) ExitMatcher(ctx *parser.MatcherContext) {
+	log.Print("ExitMatcher")
+}
+
+// EnterAllow ...
+func (i *interp) EnterAllow(ctx *parser.AllowContext) {
+	log.Print("EnterAllow")
+}
+
+// ExitAllow ...
+func (i *interp) ExitAllow(ctx *parser.AllowContext) {
+	log.Print("ExitAllow")
+}
+
+// EnterAllowKey ...
+func (i *interp) EnterAllowKey(ctx *parser.AllowKeyContext) {
+	log.Print("EnterAllowKey")
+}
+
+// ExitAllowKey ...
+func (i *interp) ExitAllowKey(ctx *parser.AllowKeyContext) {
+	log.Print("ExitAllowKey")
 }
 
 // HasAccess ...
