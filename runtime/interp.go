@@ -20,7 +20,8 @@ func FromString(s string) (*interp, error) {
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	p := parser.NewAclRulesParser(stream)
-	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+	l := antlr.NewDiagnosticErrorListener(true)
+	p.AddErrorListener(l)
 
 	in := new(interp)
 	in.parser = p

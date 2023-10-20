@@ -6,9 +6,6 @@ GO_TEST = $(GO_RUN_TOOLS) gotest.tools/gotestsum --format pkgname
 GO_RELEASER ?= $(GO_RUN_TOOLS) github.com/goreleaser/goreleaser
 GO_MOD ?= $(shell ${GO} list -m)
 
-# find all source files
-SRC = $(go list ./... | grep -v /parser/)
-
 .PHONY: build
 build: ## Build the binary file.
 	$(GO_RELEASER) build --snapshot --rm-dist
@@ -26,9 +23,9 @@ vet: ## Run go vet against code.
 	$(GO) vet ./...
 
 .PHONY: test
-test: fmt vet ## Run tests.
+test: fmt ## Run tests.
 	mkdir -p .test/reports
-	$(GO_TEST) --junitfile .test/reports/unit-test.xml -- -race $(SRC) -count=1 -short -cover -coverprofile .test/reports/unit-test-coverage.out
+	$(GO_TEST) --junitfile .test/reports/unit-test.xml -- -race ./... -count=1 -short -cover -coverprofile .test/reports/unit-test-coverage.out
 
 .PHONY: lint
 lint: ## Run lint.
