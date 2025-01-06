@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.1
 	github.com/golang/mock v1.7.0-rc.1
-	github.com/golangci/golangci-lint v1.63.3
+	github.com/golangci/golangci-lint v1.63.4
 	github.com/stretchr/testify v1.10.0
 	mvdan.cc/gofumpt v0.7.0
 )
